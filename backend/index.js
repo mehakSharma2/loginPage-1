@@ -9,11 +9,7 @@ require('./models/db');
 
 const PORT = process.env.PORT || 5000; 
 app.use(bodyParser.json());
-app.use(cors({
-    origin: "https://my-app-f38s.vercel.app/", 
-    methods: "GET,POST,PUT,DELETE",
-    credentials: true 
-}));
+app.use(cors());
 app.use(express.json());
 app.use('/auth',authRoutes);
 app.use('/products',product);
